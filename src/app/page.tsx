@@ -1,8 +1,4 @@
-"use client"
-
 import { ChevronRight, Quote, Star, Users, Target, TrendingUp } from "lucide-react"
-import { HeroSection } from "@/components/hero-section"
-import { LeadCaptureForm } from "@/components/lead-capture-form"
 
 export default function HomePage() {
   const testimonials = [
@@ -47,8 +43,93 @@ export default function HomePage() {
         </div>
       </nav>
 
-      {/* Hero Section with Podcast Player */}
-      <HeroSection />
+      {/* Hero Section */}
+      <section className="relative min-h-screen overflow-hidden pt-20">
+        {/* Animated background particles */}
+        <div className="absolute inset-0">
+          <div className="absolute inset-0 bg-gradient-to-b from-black via-black to-zinc-950" />
+          {/* Particle effect simulation */}
+          <div className="absolute inset-0 opacity-20">
+            {[...Array(50)].map((_, i) => (
+              <div
+                key={i}
+                className="absolute h-1 w-1 animate-pulse rounded-full bg-[#00A291]"
+                style={{
+                  left: `${Math.random() * 100}%`,
+                  top: `${Math.random() * 100}%`,
+                  animationDelay: `${Math.random() * 5}s`,
+                }}
+              />
+            ))}
+          </div>
+        </div>
+
+        <div className="relative z-10 container mx-auto px-4 py-20">
+          <div className="flex flex-col items-center text-center">
+            <div className="mb-4 inline-block rounded-full border border-[#00A291] bg-[#00A291]/10 px-3 py-1 text-sm text-[#00A291]">
+              New Episode Every Week
+            </div>
+            
+            <h1 className="mb-6 text-5xl font-bold uppercase tracking-wider md:text-7xl lg:text-8xl text-white">
+              Unlock Elite<br />
+              Performance
+            </h1>
+            
+            <p className="mb-12 max-w-3xl text-lg text-zinc-400 md:text-xl">
+              Join industry leaders as we explore the science of motivation, behavior, and 
+              communication. Discover how the iDrive methodology is transforming organizations 
+              worldwide.
+            </p>
+
+            {/* Podcast Player */}
+            <div className="w-full max-w-4xl rounded-lg border border-zinc-800 bg-zinc-900/50 p-6 backdrop-blur">
+              <div className="mb-6 flex items-center justify-between">
+                <div>
+                  <h3 className="text-2xl font-bold text-white">Episode 12: Breaking Performance Barriers</h3>
+                  <p className="text-zinc-400">
+                    With Sarah Richardson, HR Director at TechCorp UK
+                  </p>
+                </div>
+                <div className="rounded bg-[#00A291] px-2 py-1 text-xs font-semibold text-white">
+                  Latest
+                </div>
+              </div>
+              
+              {/* Video/Audio Player */}
+              <div className="relative mb-6 aspect-video overflow-hidden rounded-lg bg-zinc-800">
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <button className="flex h-20 w-20 items-center justify-center rounded-full bg-[#00A291] text-white transition hover:bg-[#00635a]">
+                    <svg className="h-8 w-8" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M6.3 4.3c0-.9 1.1-1.3 1.8-.7l5.8 4.7c.5.4.5 1.2 0 1.6L8.1 14.6c-.7.6-1.8.2-1.8-.7V4.3z"/>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+
+              {/* Player Controls */}
+              <div className="space-y-4">
+                <div className="h-2 rounded-full bg-zinc-700">
+                  <div className="h-2 w-1/3 rounded-full bg-[#00A291]" />
+                </div>
+                <div className="flex items-center justify-between text-sm text-zinc-400">
+                  <span>12:45</span>
+                  <span>38:20</span>
+                </div>
+              </div>
+            </div>
+
+            {/* CTA Buttons */}
+            <div className="mt-12 flex flex-col gap-4 sm:flex-row">
+              <button className="rounded-full bg-[#00A291] px-8 py-4 font-semibold text-white transition hover:bg-[#00635a]">
+                Take the Free iDrive Assessment
+              </button>
+              <button className="rounded-full border border-[#00A291] px-8 py-4 font-semibold text-[#00A291] transition hover:bg-[#00A291] hover:text-white">
+                Book a Consultation
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Key Takeaways Section */}
       <section className="border-t border-zinc-800 py-20">
@@ -126,58 +207,72 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* iDrive Assessment Preview */}
-      <section id="idrive" className="border-t border-zinc-800 py-20">
+      {/* Lead Capture Form */}
+      <section id="contact" className="border-t border-zinc-800 bg-zinc-950 py-20">
         <div className="container mx-auto px-4">
           <div className="mb-12 text-center">
-            <div className="mb-4 inline-block rounded-full border border-[#00A291] bg-[#00A291]/10 px-3 py-1 text-sm text-[#00A291]">
-              Free Assessment
-            </div>
-            <h2 className="mb-4 text-4xl font-bold uppercase tracking-wider">Experience iDrive</h2>
+            <h2 className="mb-4 text-4xl font-bold uppercase tracking-wider text-white">
+              Ready to Transform Your Team?
+            </h2>
             <p className="text-xl text-zinc-400">
-              Discover what motivates you and your team in just 10 minutes
+              Get exclusive insights and early access to new episodes
             </p>
           </div>
 
           <div className="mx-auto max-w-2xl rounded-lg border border-zinc-800 bg-zinc-900/50 p-6">
             <div className="mb-6">
-              <h3 className="mb-2 text-2xl font-bold text-white">Sample Question</h3>
-              <p className="text-zinc-400">Question 1 of 10</p>
+              <h3 className="text-2xl font-bold text-white">Join Our Community</h3>
+              <p className="text-zinc-400">
+                Over 10,000 leaders receive our weekly insights
+              </p>
             </div>
             
-            <div className="space-y-6">
-              <p className="text-lg text-zinc-300">
-                When faced with a challenging project, what drives you most?
-              </p>
-              
-              <div className="space-y-3">
-                {[
-                  "The opportunity to solve complex problems",
-                  "Recognition from leadership and peers",
-                  "Making a meaningful impact on the team",
-                  "Personal growth and skill development"
-                ].map((option, index) => (
-                  <label
-                    key={index}
-                    className="flex cursor-pointer items-center space-x-3 rounded-lg border border-zinc-700 p-4 transition hover:border-[#00A291]"
-                  >
-                    <input type="radio" name="question" className="text-[#00A291]" />
-                    <span className="text-zinc-300">{option}</span>
+            <form className="space-y-6">
+              <div className="grid gap-4 md:grid-cols-2">
+                <div className="space-y-2">
+                  <label className="block text-sm font-medium text-zinc-300">
+                    First Name *
                   </label>
-                ))}
+                  <input
+                    type="text"
+                    className="w-full rounded border border-zinc-700 bg-zinc-800 px-3 py-2 text-white"
+                    required
+                  />
+                </div>
+                <div className="space-y-2">
+                  <label className="block text-sm font-medium text-zinc-300">
+                    Last Name *
+                  </label>
+                  <input
+                    type="text"
+                    className="w-full rounded border border-zinc-700 bg-zinc-800 px-3 py-2 text-white"
+                    required
+                  />
+                </div>
               </div>
 
-              <button className="flex w-full items-center justify-center gap-2 rounded-lg bg-[#00A291] py-3 font-semibold text-white transition hover:bg-[#00635a]">
-                Start Your Free Assessment
+              <div className="space-y-2">
+                <label className="block text-sm font-medium text-zinc-300">
+                  Email Address *
+                </label>
+                <input
+                  type="email"
+                  className="w-full rounded border border-zinc-700 bg-zinc-800 px-3 py-2 text-white"
+                  required
+                />
+              </div>
+
+              <button 
+                type="submit" 
+                className="flex w-full items-center justify-center gap-2 rounded bg-[#00A291] py-3 font-semibold text-white transition hover:bg-[#00635a]"
+              >
+                Get Started
                 <ChevronRight className="h-4 w-4" />
               </button>
-            </div>
+            </form>
           </div>
         </div>
       </section>
-
-      {/* Lead Capture Form */}
-      <LeadCaptureForm />
 
       {/* Footer */}
       <footer className="border-t border-zinc-800 py-12">
