@@ -5,6 +5,7 @@ import "./globals.css"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL || process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost:3000'),
   title: "Impetus Global Podcast - Unlock Elite Performance",
   description: "Join industry leaders as we explore breakthrough insights on motivation, behavior, and communication. Discover how the iDrive methodology is transforming organizations worldwide.",
   keywords: ["leadership development", "performance optimization", "iDrive assessment", "business transformation", "team performance"],
@@ -16,7 +17,7 @@ export const metadata: Metadata = {
     url: "https://impetus.global/podcast",
     images: [
       {
-        url: "/og-image.png",
+        url: "/impetus-logo.svg",
         width: 1200,
         height: 630,
         alt: "Impetus Global Podcast",
@@ -27,7 +28,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Impetus Global Podcast",
     description: "Unlock elite performance with science-backed insights",
-    images: ["/og-image.png"],
+    images: ["/impetus-logo.svg"],
   },
 }
 
