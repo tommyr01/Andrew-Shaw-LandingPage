@@ -24,10 +24,10 @@
 
 @layer base {
   * {
-    @apply border-border;
+    @apply border-zinc-800;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-black text-white;
   }
 }
 
